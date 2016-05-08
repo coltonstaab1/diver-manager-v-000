@@ -21,6 +21,22 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    Gender
+    <%= f.label :gender, "Male" %>
+    <%= f.radio_button :gender, "male" %>
+    <%= f.label :gender, "Female" %>
+    <%= f.radio_button :gender, "female" %>
+  </div>
+
+  <div class="field">
+    
+  </div>
+
+  <div class="field">
+    
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
