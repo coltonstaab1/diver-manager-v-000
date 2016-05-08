@@ -7,3 +7,24 @@ Data model:
 4) there are teams. Teams have divers
 5) teams have coaches, divers, and dives
 6) pools have locations, dives, meets, teams
+
+So, basically, what this app should look like is...:
+
+Divers have:
+1) a gender
+2) age
+3) a team
+4) meets
+
+Teams have:
+1) divers
+
+Dives have:
+1) a description
+2) a degree of difficulty
+3) 
+
+Competitions have:
+1) many divers
+2) time
+3) place
