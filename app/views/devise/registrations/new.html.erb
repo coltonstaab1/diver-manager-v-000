@@ -31,7 +31,7 @@
 
   <div class="field">
     <%= f.label :team, "Team" %>
-    <%= f.collection_select(:diver, :team, Team.all, :id, :name, include_blank: true) %>
+    <%= f.collection_select(:user, :team, Team.all, :id, :name, include_blank: true) %>
   </div>
 
   <div class="field">
