@@ -5,6 +5,7 @@ class CreateCompetitionDives < ActiveRecord::Migration
       t.decimal :score_2
       t.decimal :score_3
       t.integer :dive_id
+      t.integer :user_id
 
       t.timestamps null: false
     end
