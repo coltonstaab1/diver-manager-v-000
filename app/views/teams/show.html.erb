@@ -1,0 +1,8 @@
+Team: <%= @team.name %><br>
+Pool: <%= link_to @team.pool.name, pool_path(@team.pool) %><br>
+Divers:<br>
+<ul>
+<% @team.users.each do |diver| %>
+  <li><%= diver.first_name %> <%= diver.last_name %></li>
+<% end %>
+</ul>
