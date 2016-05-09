@@ -7,6 +7,7 @@ class CreateCompetitionDives < ActiveRecord::Migration
       t.integer :dive_id
       t.integer :user_id
       t.integer :meet_id
+      t.integer :order_number
 
       t.timestamps null: false
     end
