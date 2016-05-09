@@ -3,7 +3,8 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
-    redirect_to user_path(@user)
+    @message = "Welcome to DiveTracker!"
+    redirect_to user_path(@user, message: @message)
   end
 
   private

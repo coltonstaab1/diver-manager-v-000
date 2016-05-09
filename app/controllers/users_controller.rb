@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def show
-    binding.pry
+    @message = params[:message]
+    @user = User.find(params[:id])
   end
 
   def index

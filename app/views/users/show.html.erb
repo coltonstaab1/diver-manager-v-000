@@ -1,1 +1,9 @@
-User page!
+<% if @message %>
+  <div class="center alert">
+    <p><%= @message %></p>
+  </div>
+<% end %>
+
+Name: <%= @user.email %><br>
+Team: <%= link_to @user.team.name, team_path(@user.team)  %><br>
+Age: <%= @user.age %>
