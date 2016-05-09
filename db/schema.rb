@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20160509121825) do
     t.integer  "dive_id"
     t.integer  "user_id"
     t.integer  "meet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "order_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "dives", force: :cascade do |t|
