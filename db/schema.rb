@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20160508172345) do
 
   create_table "dives", force: :cascade do |t|
+    t.string   "number_code"
     t.string   "description"
     t.decimal  "degree_of_difficulty"
     t.datetime "created_at",           null: false
