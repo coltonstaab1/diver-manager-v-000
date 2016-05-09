@@ -4,4 +4,6 @@ class Team < ActiveRecord::Base
   has_many :dives, :through => :competition_dives
   has_one :pool
 
+  validates :name, uniqueness: { case_sensitive: false }
+
 end

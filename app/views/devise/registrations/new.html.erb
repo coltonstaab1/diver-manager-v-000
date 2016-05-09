@@ -30,13 +30,15 @@
   </div>
 
   <div class="field">
-    <%= f.label :team, "Team" %>
-    <%= f.collection_select(:user, :team_id, Team.all, :id, :name, include_blank: true) %>
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
   </div>
 
   <div class="field">
-    
+    <%= f.label :team_id, "Team name" %><br>
+    <%= f.collection_select :team_id, Team.all, :id, :name, include_blank: true %>
   </div>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
