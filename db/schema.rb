@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508172345) do
+ActiveRecord::Schema.define(version: 20160509121825) do
+
+  create_table "competition_dives", force: :cascade do |t|
+    t.decimal  "score_1"
+    t.decimal  "score_2"
+    t.decimal  "score_3"
+    t.integer  "dive_id"
+    t.integer  "user_id"
+    t.integer  "meet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "dives", force: :cascade do |t|
     t.string   "number_code"
@@ -19,6 +30,24 @@ ActiveRecord::Schema.define(version: 20160508172345) do
     t.decimal  "degree_of_difficulty"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "meets", force: :cascade do |t|
+    t.string   "description"
+    t.date     "date"
+    t.integer  "pool_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "pools", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "teams", force: :cascade do |t|
@@ -40,7 +69,7 @@ ActiveRecord::Schema.define(version: 20160508172345) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "team_id"
+    t.integer  "team_id"
     t.string   "gender"
     t.integer  "age"
   end
