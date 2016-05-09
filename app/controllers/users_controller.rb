@@ -9,5 +9,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def edit
+
+  end
 
 end

@@ -4,7 +4,13 @@
   </div>
 <% end %>
 
-Name: <%= @user.email %><br>
+Name: <%= @user.first_name %> <%= @user.last_name %><br>
+Email: <%= @user.email %><br>
 Team: <%= link_to @user.team.name, team_path(@user.team)  %><br>
 Age: <%= @user.age %><br><br>
+
+<!--<% if current_user %>
+  <%= link_to "Edit profile information", edit_user_registration_path(@user) %><br>
+<% end %>-->
+
 <%= link_to "Show all divers", users_path %>
