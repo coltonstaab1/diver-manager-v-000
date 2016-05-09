@@ -6,4 +6,5 @@
 
 Name: <%= @user.email %><br>
 Team: <%= link_to @user.team.name, team_path(@user.team)  %><br>
-Age: <%= @user.age %>
+Age: <%= @user.age %><br><br>
+<%= link_to "Show all divers", users_path %>
