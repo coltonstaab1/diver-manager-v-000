@@ -1,13 +1,9 @@
-class UsersController < Devise::RegistrationsController
+class RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
     redirect_to '/users/#{@user.id}'
-  end
-
-  def show
-    binding.pry
   end
 
   private
