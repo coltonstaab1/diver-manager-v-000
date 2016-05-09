@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509121825) do
+ActiveRecord::Schema.define(version: 20160509145441) do
 
   create_table "competition_dives", force: :cascade do |t|
     t.decimal  "score_1"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20160509121825) do
     t.integer  "team_id"
     t.string   "gender"
     t.integer  "age"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
