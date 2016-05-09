@@ -1,1 +1,5 @@
-pool index page
+<ul>
+<% @pools.each do |pool| %>
+  <li><%= link_to pool.name, pool_path(pool) %></li>
+<% end %>
+</ul>

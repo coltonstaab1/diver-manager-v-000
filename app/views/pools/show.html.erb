@@ -1,1 +1,5 @@
-pool show page
+<%= @pool.name %><br>
+Address:<br>
+<%= @pool.address %>
+<%= "#{@pool.city}, #{@pool.state} #{@pool.zip_code}" %><br>
+Team: <%= @pool.team.name %>
