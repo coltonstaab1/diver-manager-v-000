@@ -1,1 +1,21 @@
-new page
+<h1>Create a new meet:</h1>
+
+<%= form_tag meets_path do %>
+  <% @dives.each do |dive| %>
+    <%= fields_for 'dives[]', dive do |p| %>
+
+      <div class="field">
+        <%= p.label :score_1 %><br>
+        <%= p.text_field :score_1 %>
+      </div>
+      <div class="field">
+        <%= p.label :score_2 %><br>
+        <%= p.text_field :score_2 %>
+      </div>
+
+    <% end %>
+  <% end %>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
