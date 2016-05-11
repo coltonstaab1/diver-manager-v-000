@@ -1,17 +1,32 @@
 <h1>Create a new meet:</h1>
 
 <%= form_tag meets_path do %>
+
+  <% @order_number = 1 %>
+
   <% @dives.each do |dive| %>
     <%= fields_for 'dives[]', dive do |p| %>
 
+    <h1><%= @order_number %></h1><br>
+    <div class="field">
+      <%= p.label :dive_id %>
+      <%= p.collection_select :dive_id, Dive.all, :id, :number_code, include_blank: true %>
+    </div>
+
       <div class="field">
         <%= p.label :score_1 %><br>
-        <%= p.text_field :score_1 %>
+        <%= p.number_field :score_1 %>
       </div>
       <div class="field">
         <%= p.label :score_2 %><br>
-        <%= p.text_field :score_2 %>
+        <%= p.number_field :score_2 %>
       </div>
+      <div>
+        <%= p.label :score_3 %><br>
+        <%= p.number_field :score_3 %>
+      </div>
+
+      <% @order_number += 1 %>
 
     <% end %>
   <% end %>
