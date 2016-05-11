@@ -1,6 +1,11 @@
 <%= form_for(@team) do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
+  
+  <%= f.fields_for :pools do |pool| %>
+    <%= f.label "Pool" %><br>
+    <%= f.collection_select :id, Pool.all, :id, :name, include_blank: true %><br>
+  <% end %>
 
   <%= f.submit %>
 <% end %>

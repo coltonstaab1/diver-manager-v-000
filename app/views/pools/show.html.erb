@@ -2,4 +2,4 @@
 Address:<br>
 <%= @pool.address %>
 <%= "#{@pool.city}, #{@pool.state} #{@pool.zip_code}" %><br>
-Team: <%= @pool.team.name %>
+Team: <%= link_to @pool.team.name, team_path(@pool.team) %>
