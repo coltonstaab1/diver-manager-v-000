@@ -2,6 +2,8 @@
 
 <%= form_tag meets_path do %>
 
+  <%= p.hidden_field :user_id, value: current_user[:id] %>
+
   <% @order_number = 1 %>
 
   <% @dives.each do |dive| %>
@@ -27,8 +29,6 @@
         <%= p.label :score_3 %><br>
         <%= p.number_field :score_3 %>
       </div>
-
-      <%= p.hidden_field :user_id, value: current_user[:id] %>
 
       <% @order_number += 1 %>
 
