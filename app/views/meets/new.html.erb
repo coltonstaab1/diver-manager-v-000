@@ -7,11 +7,13 @@
   <% @dives.each do |dive| %>
     <%= fields_for 'dives[]', dive do |p| %>
 
-    <h1><%= @order_number %></h1><br>
-    <div class="field">
-      <%= p.label :dive_id %>
-      <%= p.collection_select :dive_id, Dive.all, :id, :number_code, include_blank: true %>
-    </div>
+      <h1><%= @order_number %>.</h1><br>
+      <%= p.hidden_field :order_number, value: @order_number %>
+      
+      <div class="field">
+        <%= p.label :dive_id %>
+        <%= p.collection_select :dive_id, Dive.all, :id, :number_code, include_blank: true %>
+      </div>
 
       <div class="field">
         <%= p.label :score_1 %><br>
@@ -25,6 +27,8 @@
         <%= p.label :score_3 %><br>
         <%= p.number_field :score_3 %>
       </div>
+
+      <%= p.hidden_field :user_id, value: current_user[:id] %>
 
       <% @order_number += 1 %>
 
