@@ -2,7 +2,14 @@
 
 <%= form_tag meets_path do %>
 
-  <%= p.hidden_field :user_id, value: current_user[:id] %>
+  <%= fields_for 'meet' do |f| %>
+    <%= f.label :description, 'Name: ' %>
+    <%= f.text_field :description %><br>
+
+    <%= f.label :pool_id, 'Pool: ' %>
+    <%= f.collection_select :pool_id, Pool.all, :id, :name, include_blank: false %>
+
+  <% end %>
 
   <% @order_number = 1 %>
 
